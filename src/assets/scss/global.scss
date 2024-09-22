@@ -1,0 +1,38 @@
+@import "normalize.css";
+@import "variables";
+@import "functions";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100vh;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: toRem($font-size-base);
+  color: $color-text-main;
+  background-color: $color-bg;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}

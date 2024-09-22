@@ -1,0 +1,27 @@
+@use "sass:math";
+
+@import "variables";
+
+@function toRem($pixels, $context: $font-size-base) {
+  @if math.is-unitless($pixels) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if math.is-unitless($context) {
+    $context: $context * 1px;
+  }
+
+  @return calc($pixels / $context) * 1rem;
+}
+
+@function toEm($pixels, $context: $font-size-base) {
+  @if math.is-unitless($pixels) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if math.is-unitless($context) {
+    $context: $context * 1px;
+  }
+
+  @return calc($pixels / $context) * 1em;
+}

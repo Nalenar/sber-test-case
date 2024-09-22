@@ -1,0 +1,138 @@
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cover {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.5;
+  background-color: $color-black;
+}
+
+.navigation {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  padding: 0 toRem(16);
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: white;
+  }
+
+  .toggle {
+    cursor: pointer;
+
+    padding: toRem(20) toRem(10);
+
+    background-color: rgba($color-white, 0.25);
+    border: 1px solid $color-text-main;
+    border-radius: toRem(10);
+
+    transition:
+      scale 0.2s ease-in,
+      background 0.2s ease-in;
+
+    &:hover {
+      scale: 1.1;
+      background-color: rgba($color-white, 0.4);
+    }
+
+    &_left {
+      justify-content: flex-start;
+
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &_right {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.pagination {
+  position: absolute;
+  bottom: toRem(30);
+
+  display: flex;
+  gap: toRem(15);
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  .circle {
+    cursor: pointer;
+
+    z-index: 1;
+
+    aspect-ratio: 1;
+    width: toRem(20);
+
+    background-color: gray;
+    border: none;
+    border-radius: 50%;
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 10%),
+      0 1px 2px 0 rgb(0 0 0 / 6%);
+
+    transition:
+      background 0.2s ease-in,
+      scale 0.2s ease-in;
+
+    &:hover {
+      scale: 1.2;
+    }
+
+    &_active {
+      background-color: $color-white;
+    }
+  }
+}
+
+.autoPlay {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: toRem(15);
+
+  background-color: rgba($color-white, 0.25);
+  border: 1px solid $color-text-main;
+  border-radius: toRem(10);
+
+  transition: background 0.2s ease-in;
+
+  &:hover {
+    background-color: rgba($color-white, 0.4);
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  .icon {
+    scale: 2;
+    color: $color-white;
+  }
+}
